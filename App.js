@@ -8,12 +8,16 @@ import {
   TouchableOpacity,
 } from "react-native";
 
+import { useStore } from "./store/useStore";
+
 export default function App() {
-  const [text, onChangeText] = React.useState("");
+  const { players, setPlayer } = useStore();
+  const [name, onChangeName] = React.useState("");
   const onPress = () => {
-    if (text) {
-      console.log(text);
-      onChangeText("");
+    if (name) {
+      setPlayer(name);
+      console.log(players);
+      onChangeName("");
     }
   };
   return (
@@ -24,8 +28,8 @@ export default function App() {
         <TextInput
           placeholder='Input the name'
           style={styleInput.input}
-          onChangeText={onChangeText}
-          value={text}
+          onChangeText={onChangeName}
+          value={name}
         />
         <TouchableOpacity
           style={{
