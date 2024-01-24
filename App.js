@@ -6,12 +6,16 @@ import {
   View,
   TextInput,
   TouchableOpacity,
-  Alert,
 } from "react-native";
 
 export default function App() {
   const [text, onChangeText] = React.useState("");
-
+  const onPress = () => {
+    if (text) {
+      console.log(text);
+      onChangeText("");
+    }
+  };
   return (
     <View style={styles.container}>
       <StatusBar style='auto' />
@@ -31,6 +35,7 @@ export default function App() {
             borderRadius: 4,
             backgroundColor: "blue",
           }}
+          onPress={onPress}
         >
           <Text
             style={{
