@@ -16,10 +16,10 @@ export default function App() {
   const onPress = () => {
     if (name) {
       setPlayer(name);
-      console.log(players);
       onChangeName("");
     }
   };
+  console.log(players);
   return (
     <View style={styles.container}>
       <StatusBar style='auto' />
