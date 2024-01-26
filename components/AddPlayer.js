@@ -1,22 +1,15 @@
-import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-  FlatList
-} from "react-native";
+import React from 'react';
+import {StyleSheet, Text, View, TextInput, TouchableOpacity, FlatList} from 'react-native';
 
-import { useStore } from "../store/useStore";
+import {useStore} from '../store/useStore';
 
 export default function AddPlayer() {
-  const { players, setPlayer } = useStore();
-  const [name, onChangeName] = React.useState("");
+  const {players, setPlayer} = useStore();
+  const [name, onChangeName] = React.useState('');
   const onPress = () => {
     if (name) {
       setPlayer(name);
-      onChangeName("");
+      onChangeName('');
     }
   };
   console.log(players);
@@ -25,7 +18,7 @@ export default function AddPlayer() {
       <Text>Please Input the name</Text>
       <View style={styles.flexContainer}>
         <TextInput
-          placeholder='Input the name'
+          placeholder="Input the name"
           style={styles.input}
           onChangeText={onChangeName}
           value={name}
@@ -36,28 +29,31 @@ export default function AddPlayer() {
             width: 30,
             marginTop: 18,
             borderRadius: 4,
-            backgroundColor: "blue",
+            backgroundColor: 'blue',
           }}
-          onPress={onPress}
-        >
+          onPress={onPress}>
           <Text
             style={{
-              color: "#fff",
-              textAlign: "center",
+              color: '#fff',
+              textAlign: 'center',
               marginTop: 4,
-            }}
-          >
+            }}>
             +
           </Text>
         </TouchableOpacity>
       </View>
-        <FlatList data={players} renderItem={(itemData) => {
+
+      <FlatList
+        data={players}
+        renderItem={(itemData) => {
           return (
             <View>
               <Text>{itemData.item.name}</Text>
             </View>
-          )}} alwaysBounceVertical={false}
-        />
+          );
+        }}
+        alwaysBounceVertical={false}
+      />
     </View>
   );
 }
@@ -65,14 +61,14 @@ export default function AddPlayer() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "flex-start",
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
     marginTop: '16%',
   },
   flexContainer: {
-    display: "flex",
-    flexDirection: "row",
+    display: 'flex',
+    flexDirection: 'row',
   },
   input: {
     height: 40,
@@ -81,7 +77,5 @@ const styles = StyleSheet.create({
     width: 200,
     borderWidth: 1,
     padding: 10,
-  }
-
+  },
 });
-
