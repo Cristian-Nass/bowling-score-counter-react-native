@@ -6,6 +6,7 @@ import {
   View,
   TextInput,
   TouchableOpacity,
+  FlatList
 } from "react-native";
 
 import { useStore } from "./store/useStore";
@@ -52,6 +53,13 @@ export default function App() {
           </Text>
         </TouchableOpacity>
       </View>
+        <FlatList data={players} renderItem={(itemData) => {
+          return (
+            <View>
+              <Text>{itemData.item.name}</Text>
+            </View>
+          )}} alwaysBounceVertical={false}
+        />
     </View>
   );
 }
@@ -61,7 +69,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-start",
   },
 });
 

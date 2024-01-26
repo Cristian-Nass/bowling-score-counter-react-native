@@ -6,7 +6,7 @@ export const useStore = create((set) => ({
   setPlayer: (name) => {
     set((state) => {
       return {
-        players: [...state.players, { id: uuid.v4(), name: name }],
+        players: [...state.players, { key: uuid.v4(), name: name }],
       };
     });
   },
