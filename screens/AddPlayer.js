@@ -1,5 +1,13 @@
 import React from 'react';
-import {StyleSheet, Text, View, TextInput, TouchableOpacity, FlatList, Button} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+  FlatList,
+  Pressable,
+} from 'react-native';
 
 import {useStore} from '../store/useStore';
 
@@ -17,6 +25,10 @@ export default function AddPlayer() {
   const removePlayerHandler = (key) => {
     console.log(key);
     removePlayer(key);
+  };
+
+  const startGame = () => {
+    console.log('Start Game');
   };
 
   const playersList = (player) => {
@@ -80,6 +92,9 @@ export default function AddPlayer() {
         }}
         alwaysBounceVertical={false}
       />
+      <Pressable onPress={startGame}>
+        <Text>Start</Text>
+      </Pressable>
     </View>
   );
 }
@@ -91,7 +106,6 @@ const styles = StyleSheet.create({
     padding: 20,
     // alignItems: 'center',
     // justifyContent: 'flex-start',
-    marginTop: '10%',
   },
   flexContainer: {
     display: 'flex',
