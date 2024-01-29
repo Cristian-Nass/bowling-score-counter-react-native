@@ -28,7 +28,7 @@ export default function AddPlayer() {
             height: 30,
             width: 30,
             borderRadius: 4,
-            backgroundColor: '#E87878 ',
+            backgroundColor: '#e87878',
           }}
           onPress={() => removePlayerHandler(player.key)}>
           <Text
