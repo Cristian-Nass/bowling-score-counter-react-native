@@ -14,6 +14,7 @@ import {useStore} from '../store/useStore';
 export default function AddPlayer({navigation}) {
   const {players, setPlayer, removePlayer} = useStore();
   const [name, onChangeName] = React.useState('');
+  const existingPlayer = players.length > 0 ? true : false;
 
   const addPlayer = () => {
     if (name) {
@@ -28,8 +29,7 @@ export default function AddPlayer({navigation}) {
   };
 
   const startGame = () => {
-    console.log('Start Game');
-    navigation.navigate('Play');
+    if (existingPlayer) navigation.navigate('Play');
   };
 
   const playersList = (player) => {
