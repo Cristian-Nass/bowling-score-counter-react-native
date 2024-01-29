@@ -4,7 +4,7 @@ import {StyleSheet, Text, View} from 'react-native';
 export default function Play() {
   return (
     <View style={styles.container}>
-      <Text>Please Input the name</Text>
+      <Text>Start The Game</Text>
     </View>
   );
 }

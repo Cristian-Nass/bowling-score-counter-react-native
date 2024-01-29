@@ -2,6 +2,8 @@ import React from 'react';
 import {StatusBar} from 'expo-status-bar';
 import {StyleSheet, View} from 'react-native';
 import AddPlayer from './screens/AddPlayer';
+import Play from './screens/Play';
+
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -11,8 +13,9 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="AddPlayer" component={AddPlayer} />
+        <Stack.Navigator initialRouteName="Add-Player">
+          <Stack.Screen name="Add-Player" component={AddPlayer} />
+          <Stack.Screen name="Playe" component={Play} />
         </Stack.Navigator>
       </NavigationContainer>
     </View>

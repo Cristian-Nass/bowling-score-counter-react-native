@@ -11,7 +11,7 @@ import {
 
 import {useStore} from '../store/useStore';
 
-export default function AddPlayer() {
+export default function AddPlayer({navigation}) {
   const {players, setPlayer, removePlayer} = useStore();
   const [name, onChangeName] = React.useState('');
 
@@ -29,6 +29,7 @@ export default function AddPlayer() {
 
   const startGame = () => {
     console.log('Start Game');
+    navigation.navigate('Playe');
   };
 
   const playersList = (player) => {
