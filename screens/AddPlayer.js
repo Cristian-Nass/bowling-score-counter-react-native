@@ -93,8 +93,10 @@ export default function AddPlayer({navigation}) {
         }}
         alwaysBounceVertical={false}
       />
-      <Pressable style={styles.startButton} onPress={startGame}>
-        <Text>Start</Text>
+      <Pressable
+        style={[styles.startButton, existingPlayer ? styles.buttonEnable : styles.buttonDisable]}
+        onPress={startGame}>
+        <Text style={existingPlayer ? styles.colorEnable : styles.colorDisable}>Start</Text>
       </Pressable>
     </View>
   );
@@ -135,7 +137,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     maxHeight: 50,
     borderRadius: 6,
+  },
+  buttonEnable: {
     backgroundColor: '#4eb8ba',
-    color: 'red',
+  },
+  buttonDisable: {
+    backgroundColor: '#ededed',
+    color: 'white',
+  },
+  colorEnable: {
+    color: '#f0f0f0',
+  },
+  colorDisable: {
+    color: '#a8a8a8',
   },
 });
