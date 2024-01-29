@@ -29,7 +29,7 @@ export default function AddPlayer({navigation}) {
 
   const startGame = () => {
     console.log('Start Game');
-    navigation.navigate('Playe');
+    navigation.navigate('Play');
   };
 
   const playersList = (player) => {

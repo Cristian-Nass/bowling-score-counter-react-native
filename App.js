@@ -15,7 +15,7 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Add-Player">
           <Stack.Screen name="Add-Player" component={AddPlayer} />
-          <Stack.Screen name="Playe" component={Play} />
+          <Stack.Screen name="Play" component={Play} />
         </Stack.Navigator>
       </NavigationContainer>
     </View>
