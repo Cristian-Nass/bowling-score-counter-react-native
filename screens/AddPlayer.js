@@ -93,7 +93,7 @@ export default function AddPlayer({navigation}) {
         }}
         alwaysBounceVertical={false}
       />
-      <Pressable onPress={startGame}>
+      <Pressable style={styles.startButton} onPress={startGame}>
         <Text>Start</Text>
       </Pressable>
     </View>
@@ -128,5 +128,14 @@ const styles = StyleSheet.create({
     marginTop: 10,
     padding: 8,
     borderRadius: 6,
+  },
+  startButton: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    maxHeight: 50,
+    borderRadius: 6,
+    backgroundColor: '#4eb8ba',
+    color: 'red',
   },
 });
